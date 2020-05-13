@@ -1,7 +1,7 @@
 from pwn import *
 
 
-shell_code = '\n'.join([
+shellcode = '\n'.join([
     'push 0',
     'push %d' % u32('.txt'),
     'push %d' % u32('flag'),
