@@ -39,7 +39,7 @@ shellcode = '\n'.join([
 
     'mov edx, eax', # Count
     'mov ecx, esp', # Buffer
-    'mov ebx, 0', # fd
+    'mov ebx, 1', # fd
     'mov eax, 4', # Write syscall number
     'int 0x80',
 ])
